@@ -1,0 +1,1628 @@
+schema_version: 1
+
+context:
+  name: abinit-data
+  version: "0.0.1"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://wiki.fysik.dtu.dk/abinit-files/abinit-pseudopotentials-2.tar.gz
+  sha256: fef025b3a00695e94651ae3a6a851b35af50836d8e8ce845061ff99dbefe093b
+
+build:
+  number: 1
+  noarch: generic
+
+requirements:
+  build:
+  run:
+  run_exports:
+    - ${{ pin_subpackage('abinit-data', upper_bound='x.x.x') }}
+
+tests:
+  - script:
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_PAW/C-GGA-abinit.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_PAW/Mo-GGA-semicore.atompaw.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_PAW/Co-GGA-atompaw.gga.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_PAW/C-GGA-hard.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_PAW/B-GGA-hard.atompaw.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_PAW/H-GGA-abinit.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_PAW/Mo-GGA-atompaw.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_PAW/Pt-GGA-semicore.atompaw.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_PAW/Ni-GGA-abinit.gga.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_PAW/H-GGA-hard.uspp.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_PAW/Ag-GGA-atompaw.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_PAW/Ag-GGA-semicore.atompaw.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_PAW/Gd-GGA-atompaw.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_PAW/Ni-GGA-atompaw.gga.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_PAW/Au-GGA-atompaw.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_PAW/Fe-GGA-atompaw.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_PAW/Pt-GGA-atompaw.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_PAW/B-GGA-atompaw.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_PAW/Co-GGA-semicore.atompaw.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_PAW/Ni-GGA-atompaw.semicore.gga.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_PAW/Ce-GGA-atompaw.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_PAW/O-GGA-hard.uspp.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_PAW/Fe-GGA-sp_semicore.atompaw.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_PAW/Ti-GGA-uspp.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_PAW/Zn-GGA-atompaw.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_PAW/N-GGA-hard.uspp.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/76os.16.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/30zn.12.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/13al.3.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/44ru.16.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/42mo.14.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/28ni.10.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/atomic.data
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/23v.5.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/2he.2.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/40zr.12.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/46pd.10.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/HGH.tar.gz
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/19k.1.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/20ca.10.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/15p.5.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/51sb.5.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/70yb.24.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/31ga.3.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/56ba.2.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/61pm.15.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/56ba.10.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/79au.1.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/ren.pl
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/21sc.3.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/77ir.17.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/79au.11.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/24cr.14.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/73ta.13.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/25mn.7.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/83bi.5.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/44ru.8.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/24cr.6.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/37rb.1.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/76os.8.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/86rn.8.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/80hg.12.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/30zn.2.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/41nb.13.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/81tl.3.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/22ti.4.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/48cd.2.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/45rh.9.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/32ge.4.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/78pt.10.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/47ag.11.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/40zr.4.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/67ho.21.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/27co.17.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/65tb.19.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/55cs.1.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/49in.13.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/20ca.2.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/74w.6.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/85at.7.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/5b.3.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/77ir.9.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/9f.7.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/11na.1.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/48cd.12.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/73ta.5.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/8o.6.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/23v.13.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/63eu.17.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/80hg.2.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/31ga.13.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/74w.14.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/37rb.9.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/14si.4.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/39y.11.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/81tl.13.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/47ag.1.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/71lu.25.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/54xe.8.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/7n.5.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/68er.22.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/69tm.23.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/64gd.18.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/42mo.6.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/58ce.12.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/82pb.4.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/57la.11.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/36kr.8.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/59pr.13.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/55cs.9.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/3li.3.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/6c.4.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/60nd.14.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/78pt.18.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/75re.7.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/33as.5.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/53i.7.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/12mg.2.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/11na.9.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/10ne.8.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/12mg.10.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/3li.1.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/29cu.11.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/84po.6.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/66dy.20.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/75re.15.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/22ti.12.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/26fe.8.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/46pd.18.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/29cu.1.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/17cl.7.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/28ni.18.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/18ar.8.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/43tc.7.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/26fe.16.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/38sr.10.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/27co.9.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/1h.1.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/62sm.16.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/19k.9.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/16s.6.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/52te.6.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/4be.4.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/41nb.5.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/34se.6.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/25mn.15.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/21sc.11.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/50sn.4.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/49in.3.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/72hf.12.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/35br.7.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/43tc.15.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/39y.3.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/45rh.17.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/38sr.2.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_HGH/4be.2.hgh
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_PAW/Co-LDA-semicore.atompaw.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_PAW/Co-LDA-atompaw.lda.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_PAW/Mo-LDA-atompaw.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_PAW/O-LDA-hard.uspp.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_PAW/C-LDA-abinit.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_PAW/N-LDA-hard.uspp.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_PAW/Ni-LDA-atompaw.semicore.lda.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_PAW/H-LDA-hard.uspp.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_PAW/Ni-LDA-abinit.lda.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_PAW/B-LDA-hard.atompaw.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_PAW/Ag-LDA-semicore.atompaw.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_PAW/H-LDA-abinit.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_PAW/Ni-LDA-atompaw.lda.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_PAW/B-LDA-atompaw.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_PAW/Pt-LDA-semicore.atompaw.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_PAW/Ce-LDA-atompaw.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_PAW/Zn-LDA-atompaw.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_PAW/Gd-LDA-atompaw.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_PAW/Mo-LDA-semicore.atompaw.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_PAW/Ag-LDA-atompaw.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_PAW/Fe-LDA-sp_semicore.atompaw.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_PAW/Fe-LDA-atompaw.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_PAW/Pt-LDA-atompaw.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_PAW/Ti-LDA-uspp.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_PAW/Au-LDA-atompaw.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_PAW/C-LDA-hard.uspp.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_PAW/Bi-LDA-abinit.paw
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/76-Os.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/20-Ca.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/60-Nd.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/25-Mn.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/39-Y.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/109-Mt.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/42-Mo.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/54-Xe.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/105-Db.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/73-Ta.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/74-W.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/18-Ar.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/15-P.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/30-Zn.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/44-Ru.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/53-I.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/43-Tc.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/78-Pt.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/55-Cs.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/12-Mg.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/02-He.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/58-Ce.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/34-Se.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/07-N.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/98-Cf.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/87-Fr.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/37-Rb.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/46-Pd.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/36-Kr.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/35-Br.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/71-Lu.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/49-In.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/107-Bh.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/56-Ba.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/47-Ag.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/68-Er.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/23-V.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/05-B.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/69-Tm.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/79-Au.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/64-Gd.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/14-Si.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/75-Re.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/100-Fm.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/33-As.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/28-Ni.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/24-Cr.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/84-Po.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/21-Sc.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/89-Ac.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/82-Pb.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/91-Pa.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/54-Xe.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/105-Db.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/73-Ta.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/74-W.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/18-Ar.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/15-P.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/20-Ca.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/60-Nd.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/25-Mn.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/76-Os.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/42-Mo.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/39-Y.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/109-Mt.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/02-He.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/58-Ce.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/07-N.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/34-Se.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/30-Zn.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/44-Ru.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/12-Mg.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/53-I.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/43-Tc.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/78-Pt.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/55-Cs.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/107-Bh.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/56-Ba.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/47-Ag.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/71-Lu.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/49-In.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/68-Er.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/23-V.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/98-Cf.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/87-Fr.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/36-Kr.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/35-Br.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/37-Rb.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/46-Pd.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/28-Ni.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/24-Cr.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/84-Po.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/21-Sc.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/89-Ac.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/82-Pb.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/91-Pa.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/05-B.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/69-Tm.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/75-Re.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/100-Fm.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/33-As.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/79-Au.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/64-Gd.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/14-Si.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/03-Li.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/93-Np.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/106-Sg.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/31-Ga.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/41-Nb.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/06-C.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/38-Sr.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/70-Yb.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/81-Tl.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/26-Fe.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/103-Lr.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/10-Ne.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/61-Pm.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/101-Md.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/48-Cd.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/31-Ga-3d.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/45-Rh.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/17-Cl.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/16-S.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/110-Un.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/01-H.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/62-Sm.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/04-Be.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/80-Hg.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/19-K.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/32-Ge.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/97-Bk.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/108-Hs.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/52-Te.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/83-Bi.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/85-At.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/96-Cm.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/99-Es.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/09-F.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/11-Na.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/88-Ra.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/49-In-4d.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/29-Cu.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/104-Rf.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/50-Sn.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/08-O.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/51-Sb.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/13-Al.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/86-Rn.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/40-Zr.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/92-U.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/22-Ti.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/72-Hf.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/27-Co.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/95-Am.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/77-Ir.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/103-Lr.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/10-Ne.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/61-Pm.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/70-Yb.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/81-Tl.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/26-Fe.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/106-Sg.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/03-Li.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/93-Np.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/38-Sr.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/31-Ga.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/41-Nb.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/06-C.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/01-H.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/04-Be.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/80-Hg.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/19-K.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/62-Sm.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/48-Cd.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/31-Ga-3d.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/101-Md.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/17-Cl.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/16-S.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/110-Un.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/45-Rh.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/99-Es.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/96-Cm.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/09-F.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/11-Na.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/32-Ge.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/97-Bk.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/83-Bi.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/85-At.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/108-Hs.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/52-Te.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/40-Zr.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/86-Rn.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/92-U.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/22-Ti.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/95-Am.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/77-Ir.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/72-Hf.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/27-Co.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/88-Ra.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/49-In-4d.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/29-Cu.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/104-Rf.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/51-Sb.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/13-Al.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/50-Sn.GGA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_FHI/08-O.GGA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/75-Re.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/100-Fm.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/33-As.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/79-Au.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/14-Si.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/64-Gd.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/05-B.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/69-Tm.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/21-Sc.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/82-Pb.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/91-Pa.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/89-Ac.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/28-Ni.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/24-Cr.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/84-Po.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/35-Br.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/36-Kr.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/46-Pd.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/37-Rb.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/98-Cf.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/87-Fr.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/68-Er.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/23-V.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/47-Ag.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/56-Ba.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/107-Bh.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/71-Lu.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/49-In.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/12-Mg.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/43-Tc.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/53-I.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/55-Cs.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/78-Pt.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/30-Zn.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/44-Ru.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/34-Se.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/07-N.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/02-He.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/58-Ce.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/42-Mo.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/39-Y.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/109-Mt.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/60-Nd.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/20-Ca.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/25-Mn.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/76-Os.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/74-W.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/73-Ta.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/18-Ar.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/15-P.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/105-Db.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/54-Xe.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/21-Sc.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/82-Pb.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/91-Pa.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/89-Ac.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/28-Ni.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/24-Cr.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/84-Po.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/79-Au.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/14-Si.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/64-Gd.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/75-Re.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/100-Fm.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/33-As.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/05-B.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/69-Tm.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/68-Er.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/23-V.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/71-Lu.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/49-In.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/47-Ag.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/56-Ba.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/107-Bh.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/46-Pd.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/37-Rb.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/35-Br.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/36-Kr.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/98-Cf.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/87-Fr.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/07-N.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/34-Se.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/02-He.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/58-Ce.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/43-Tc.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/53-I.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/55-Cs.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/78-Pt.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/12-Mg.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/30-Zn.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/44-Ru.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/74-W.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/73-Ta.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/18-Ar.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/15-P.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/105-Db.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/54-Xe.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/39-Y.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/109-Mt.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/42-Mo.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/76-Os.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/60-Nd.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/20-Ca.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/25-Mn.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/13-Al.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/51-Sb.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/08-O.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/50-Sn.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/88-Ra.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/29-Cu.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/49-In-4d.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/104-Rf.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/77-Ir.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/95-Am.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/72-Hf.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/27-Co.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/40-Zr.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/86-Rn.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/22-Ti.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/92-U.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/83-Bi.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/85-At.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/108-Hs.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/52-Te.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/32-Ge.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/97-Bk.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/11-Na.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/09-F.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/99-Es.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/96-Cm.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/110-Un.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/16-S.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/17-Cl.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/45-Rh.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/48-Cd.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/31-Ga-3d.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/101-Md.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/04-Be.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/19-K.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/80-Hg.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/62-Sm.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/01-H.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/38-Sr.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/31-Ga.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/41-Nb.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/06-C.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/106-Sg.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/03-Li.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/93-Np.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/103-Lr.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/61-Pm.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/10-Ne.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/81-Tl.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/70-Yb.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/26-Fe.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/72-Hf.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/27-Co.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/77-Ir.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/95-Am.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/86-Rn.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/40-Zr.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/22-Ti.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/92-U.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/08-O.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/50-Sn.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/13-Al.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/51-Sb.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/88-Ra.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/29-Cu.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/49-In-4d.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/104-Rf.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/11-Na.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/09-F.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/96-Cm.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/99-Es.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/108-Hs.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/52-Te.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/83-Bi.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/85-At.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/32-Ge.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/97-Bk.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/62-Sm.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/04-Be.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/19-K.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/80-Hg.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/01-H.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/45-Rh.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/110-Un.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/16-S.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/17-Cl.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/101-Md.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/48-Cd.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/31-Ga-3d.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/81-Tl.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/70-Yb.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/26-Fe.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/103-Lr.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/61-Pm.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/10-Ne.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/31-Ga.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/41-Nb.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/06-C.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/38-Sr.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/03-Li.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/93-Np.LDA.fhi
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_FHI/106-Sg.LDA.ini
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/La-q11.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Mn-q15.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Ca-q10.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Cr-q14.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Cu-q11.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Mo-q14.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Ge-q4.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Pt-q10.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Ru-q8.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Kr-q8.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Sc-q11.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Br-q7.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Li-q3.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Te-q6.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Si-q4.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Ni-q18.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Pd-q18.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Ru-q16.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Ir-q17.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/F-q7.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Ag-q11.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Se-q6.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/S-q6.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Zr-q12.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Sn-q4.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Re-q7.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Cl-q7.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Ne-q8.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Au-q11.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Ar-q8.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Y-q11.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Tc-q15.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Ti-q12.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Sb-q5.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Cs-q9.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Os-q8.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/N-q5.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/At-q7.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/W-q6.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Re-q15.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Nb-q13.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Rh-q17.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Au-q19.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Po-q6.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Xe-q8.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/C-q4.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Co-q17.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/K-q9.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/He-q2.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/In-q3.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Ba-q10.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Ta-q5.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/In-q13.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Ga-q3.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Hf-q12.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Fe-q16.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/P-q5.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Rh-q9.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Ta-q13.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/O-q6.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Ga-q13.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/W-q14.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Bi-q5.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Rb-q9.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/B-q3.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Mg-q10.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Tl-q13.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Sr-q10.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Na-q9.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Pt-q18.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/H-q1.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Tl-q3.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/V-q13.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Al-q3.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Be-q4.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Cd-q12.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Hg-q12.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/As-q5.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Rn-q8.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Pb-q4.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Pd-q10.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/I-q7.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Os-q16.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Ir-q9.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Zn-q12.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/GGA_HGHK/Mg-q2.hgh.k
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/38sr.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/17cl.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/41nb.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/39y.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/43tc.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/4be.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/34se.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/69tm.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/49in.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/52te.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/16s.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/35br.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/107uns.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/29cu.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/70yb.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/94pu.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/106unh.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/50sn.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/1h.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/87fr.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/65tb.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/12mg.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/88ra.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/109une.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/7n.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/99es.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/97bk.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/77ir.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/61pm.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/42mo.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/78pt.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/14si.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/3li.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/44ru.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/75re.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/47ag.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/91pa.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/76os.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/66dy.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/80hg.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/45rh.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/92u.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/84po.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/33as.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/86rn.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/82pb.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/53i.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/6c.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/71lu.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/5b.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/22ti.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/93np.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/36kr.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/72hf.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/20ca.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/110uun.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/104unq.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/24cr.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/55cs.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/102no.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/10ne.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/108uno.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/83bi.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/11na.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/64gd.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/100fm.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/95am.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/30zn.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/90th.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/60nd.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/73ta.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/62sm.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/81tl.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/103lr.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/48cd.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/89ac.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/37rb.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/40zr.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/32ge.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/54xe.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/8o.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/74w.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/9f.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/85at.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/96cm.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/79au.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/98cf.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/41nb.pspnc.bad
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/21sc.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/57la.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/56ba.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/23v.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/31ga.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/105unp.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/18ar.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/26fe.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/67ho.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/63eu.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/46pd.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/68er.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/27co.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/51sb.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/28ni.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/15p.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/58ce.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/101md.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/25mn.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/59pr.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/19k.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/2he.pspnc
+      - if: unix
+        then: test -f ${PREFIX}/share/abinit/LDA_TM/13al.pspnc
+
+about:
+  license: GPL-3.0-only
+  license_file: COPYING
+  summary: ABINIT is an atomic-scale simulation software suite.
+  description: |
+    ABINIT is a software suite to calculate the optical, mechanical,
+    vibrational, and other observable properties of materials. Starting
+    from the quantum equations of density functional theory, you can
+    build up to advanced applications with perturbation theories based on
+    DFT, and many-body Green's functions (GW and DMFT) ...
+  homepage: https://www.abinit.org
+  repository: https://github.com/abinit/abinit/
+  documentation: https://wiki.abinit.org/doku.php
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
